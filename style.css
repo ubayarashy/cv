@@ -1,0 +1,798 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #000000;
+    --second-bg-color: #1f2020;
+    --text-color: #fff;
+    --main-color: #4af0b6;
+}
+
+html {
+    font-size: 62.5%;
+    overflow: scroll;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Scrollbar */
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+/* Responsive Navigation */
+@media (max-width: 995px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid var(--main-color);
+        border-bottom: 3px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem 3%;
+        background-color: var(--second-bg-color);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--main-color);
+    }
+}
+
+/* Section */
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: var(--bg-color);
+}
+
+.home .home-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Home Image */
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 20%;
+    box-shadow: 0 0 35px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 25px var(--main-color));
+}
+
+/* Social Icons */
+.social-icon a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+}
+
+.social-icon a:hover {
+    background: var(--main-color);
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+}
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.typing-text span{
+    position: relative;
+}
+.typing-text span::before{
+    content: '| Mahasiswa Teknologi Informasi' ; 
+    color: var(--main-color);
+    animation: words 15s infinite;
+}
+.typing-text span::after{
+    content: '';
+    background: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8pc);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 3px solid var(--bg-color);
+
+    }
+}
+/* Tombol Hire Me */
+.hire-me {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: black;
+    background: linear-gradient(90deg, var(--main-color) 0%, #36d1dc 100%);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+/* Efek Hover */
+.hire-me:hover {
+    background: linear-gradient(90deg, #36d1dc 0%, var(--main-color) 100%);
+    color: #000;
+    box-shadow: 0 0 20px var(--main-color), 0 0 40px var(--main-color);
+    transform: scale(1.05);
+}
+
+/* Efek Glowing Border */
+.hire-me::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--main-color), #36d1dc, #4af0b6);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.hire-me:hover::before {
+    opacity: 1;
+}
+@keyframes words{
+    0%,20% {
+        content: 'Pencari Teman';
+    }
+    21%,40% {
+        content: 'Pencari Ilmu';
+    }
+    41%,60% {
+        content: 'Pencari Kerja';
+    }
+    61%,80% {
+        content: 'Pencari Harta';
+    }
+    81%,100% {
+        content: 'Pencari Cinta';
+    }
+} 
+
+@media (max-width: 100px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+/* services */
+.services {
+    background: black; /* Latar belakang hitam */
+    padding: 5rem 9%;
+}
+
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.services-box {
+    background: var(--main-color); /* Warna merah */
+    color:  black; /* Teks putih */
+    padding: 3.5rem;
+    border-radius: 20px; /* Sudut membulat */
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.services-box:hover {
+    background: var(--text-color); /* Efek transparan saat hover */
+    transform: scale(1.05);
+}
+
+.service-info h4 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.service-info p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+@media(max-width:895px) {
+    services h2{
+        margin-bottom: 3rem;
+    }
+    .services-container{
+        grid-template-columns: repeat(1,1fr);
+
+    }
+}
+/* skills  */
+.skills {
+    background: var(--bg-color);
+}
+
+.skills .container {
+    background: var(--main-coldor);
+    color: var(--text-color);
+    padding: 2rem;
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+.skills .container .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Perbaikan */
+    gap: 1.8rem;
+}
+
+.skills .container .bar {
+    margin-bottom: 15px;    
+    padding: 10px;
+    border-radius: 1rem;
+    background: var(--bg-color);
+    box-shadow: 0 4px 10px var(--main-color);
+    transition: 0.3s ease;
+}
+
+.skills .container .bar:hover { /* Perbaikan selektor */
+    box-shadow: 0 4px 10px var(--text-color);
+    transform: scale(1.03);
+}
+
+.skills .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skills .container .bar .info img {
+    width: 60px;  /* Sesuaikan ukuran gambar */
+    height: 60px; /* Sesuaikan ukuran gambar */
+    object-fit: cover; /* Pastikan gambar tetap proporsional */
+    border-radius: 20%; /* Membuat gambar berbentuk lingkaran */
+
+}
+.skills .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+/* Styling untuk Judul Section */
+.services h1,
+.skills h1,.projects h1, .education h1, .contact h1{
+    font-size: 3rem; /* Ukuran lebih besar */
+    font-weight: bold; /* Tebal */
+    text-transform: uppercase; /* Huruf kapital semua */
+    text-align: center; /* Tengah */
+    color: white; /* Warna teks */
+    margin-bottom: 2rem; /* Jarak bawah */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Efek bayangan */
+}
+.education .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: rgb(153, 166, 114);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -2;
+}
+
+.education .heading {
+    font-size: 3rem; /* Ganti ukuran sesuai keinginan */
+    font-weight: bold; /* Membuatnya lebih tebal */
+}
+.education {
+    background: #000263; /* Warna latar belakang */
+    color: #141428; /* Warna teks */
+    position: relative;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* Garis bawah "My Education" */
+.education-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.education-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: rgba(29, 19, 106, 0.418)z;
+    margin: 10px auto 0;
+}
+
+/* Container untuk item timeline */
+.education .container {
+    padding: 15px 40px;
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+/* Container kiri */
+.education .container-left {
+    left: 0;
+    justify-content: flex-end;
+}
+
+/* Container kanan */
+.education .container-right {
+    left: 50%;
+    justify-content: flex-start;
+}
+
+/* Kotak mirip chat */
+.education .content {
+    background: var(--main-color);
+    position: relative;
+    border-radius: 12px;
+    padding: 15px;
+    width: 350px;
+    min-height: 80px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Efek chat */
+.education .container-left .content::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent rgb(25, 0, 255);
+}
+
+.education .container-right .content::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent rgb(202, 211, 211) transparent transparent;
+}
+
+/* Ikon toga di sebelah panah segitiga */
+.education .container-left::after,
+.education .container-right::after {
+    content: '\f19d'; /* Font Awesome toga icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #222;
+    border: 3px solid rgb(40, 159, 131);
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    z-index: 2;
+    top: 15px; /* Menyesuaikan agar sejajar dengan panah */
+}
+
+/* Ikon toga di kanan untuk kotak kiri */
+.education .container-left::after {
+    right: -50px;
+}
+
+/* Ikon toga di kiri untuk kotak kanan */
+.education .container-right::after {
+    left: -50px;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .education .container {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 10px;
+        left: 0 !important;
+    }
+
+    .education .container::after {
+        left: 15px;
+    }
+
+    .education .content::before {
+        left: 35px;
+    }
+
+    /* Atur ikon toga agar tidak keluar layar */
+    .education .container-left::after {
+        right: -40px;
+    }
+
+    .education .container-right::after {
+        left: -40px;
+    }
+}
+
+/* Membuat navbar responsif */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .navbar ul.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* Menyesuaikan ukuran teks dan elemen lainnya */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+    .container {
+        padding: 10px;
+    }
+    .profile img {
+        width: 150px;
+        height: auto;
+    }
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+.projects img {
+    width: 100%;
+    max-width: 1000px; /* Atur ukuran maksimum gambar */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px; /* Opsional untuk tampilan lebih estetik */
+}
+
+@media (max-width: 768px) {
+    .projects img {
+        max-width: 800px; /* Ukuran lebih kecil untuk layar kecil */
+    }
+}
+/* Global Styles */
+
+
+h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 0;
+    background-color: #d5d5d5;
+}
+
+.contact .heading {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+    background-color: #050202;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3,
+.contact-form h3 {
+    margin-bottom: 20px;
+}
+
+.contact-info p,
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form button {
+        font-size: 18px;
+    }
+
+    .contact-info p,
+    .contact-info a {
+        font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact .heading {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact .heading {
+        font-size: 1.2em;
+    }
+
+    .contact-info p,
+    .contact-info a,
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+    }
+}
+
